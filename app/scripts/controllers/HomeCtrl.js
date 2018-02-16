@@ -1,8 +1,12 @@
 (function() {
-  function HomeCtrl() {
+  function HomeCtrl(Room) {
+    var home = {};
+    home.rooms = Room.all;
+
+    return home;
   }
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', [HomeCtrl]);
+    .controller('HomeCtrl', ['Room', HomeCtrl]);
 })();

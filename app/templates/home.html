@@ -1,1 +1,3 @@
-<h1>Home Page</h1>
+<div class="rooms-container" ng-repeat="room in home.rooms">
+  <a class="room-name" ui-sref="album">{{ room.$value }}</a>
+</div>
