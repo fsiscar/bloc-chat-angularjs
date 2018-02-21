@@ -6,6 +6,10 @@
 
     Room.all = rooms;
 
+    Room.add = function(newRoom) {
+      firebase.database().ref('rooms').$add(newRoom);
+    }
+
     return Room;
   }
 

@@ -1,3 +1,10 @@
-<div class="rooms-container" ng-repeat="room in home.rooms">
-  <a class="room-name" ui-sref="album">{{ room.$value }}</a>
+<div class="headline">
+  <h2>Bloc Chat</h2>
+  <h4>Available rooms:</h4>
 </div>
+
+<div class="rooms-container" ng-repeat="room in home.rooms">
+  <a class="room-name">{{ room.$id }}</a>
+</div>
+
+<ng-include src="'/templates/addRoom.html'"></ng-include>
