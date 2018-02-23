@@ -7,4 +7,6 @@
   <a class="room-name">{{ room.$id }}</a>
 </div>
 
-<ng-include src="'/templates/addRoom.html'"></ng-include>
+<div class="add-room-button">
+  <button class="room-button" ng-click="home.openModal()">Add room</button>
+</div>

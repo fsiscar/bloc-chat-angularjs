@@ -1,13 +1,10 @@
 (function() {
-  function UIBootstrapCtrl() {
-    console.log("test 1 ok");
-
-    var test = function(){
-      console.log("test 2 ok");
-    }
+  function UIBootstrapCtrl(Room, $uibModal) {
+    // ng-model , functionality for ok and cancel buttons,
+    // imput goes into html
   }
 
   angular
     .module('blocChat')
-    .controller('UIBootstrapCtrl',[UIBootstrapCtrl]);
+    .controller('UIBootstrapCtrl',['Room', '$uibModal',UIBootstrapCtrl]);
 })();
