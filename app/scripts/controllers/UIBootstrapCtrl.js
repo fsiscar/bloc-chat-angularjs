@@ -6,5 +6,5 @@
 
   angular
     .module('blocChat')
-    .controller('UIBootstrapCtrl',['Room', '$uibModal',UIBootstrapCtrl]);
+    .controller('UIBootstrapCtrl',['Room', '$uibModal', UIBootstrapCtrl]);
 })();

@@ -3,8 +3,10 @@
     var home = {};
     home.rooms = Room.all;
 
+
     home.openModal = function(){
       var modalInstance = $uibModal.open({
+        animation: true,
         templateUrl: '/templates/newRoomModal.html',
         controller: 'UIBootstrapCtrl',
         controllerAs: 'UIBootstrap',
