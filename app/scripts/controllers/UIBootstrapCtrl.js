@@ -10,12 +10,13 @@
     //  $uibModalInstance.close(this.name);
     //};
 
+    // Is Room needed in UIBootstrapCtrl? If not, remove all 4 instances.
+
     this.newRoomName = '';
     //this.newRoomDescrip = '';
 
-    this.ok = function(Room) {
-      //this.newRoomName = {name: ''};
-      console.log(this.newRoomName);
+    this.createRoom = function(Room) {
+      console.log("newRoomName:",this.newRoomName);
       $uibModalInstance.close(this.newRoomName);
     };
 
