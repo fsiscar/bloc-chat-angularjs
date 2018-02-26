@@ -5,14 +5,18 @@
         <div class="modal-body" id="modal-body">
             <form>
               <label>Enter a roon name</label>
-              <input type="text">
+              <input type="text" ng-model="UIBootstrap.newRoomName">
+              <p>You entered: {{ UIBootstrap.newRoomName }}</p>
 
               <label>Description</label>
-              <input type="text">
+              <input type="text" ng-model="newRoom.newRoomDescrip">
+              <p>You entered: {{ newRoom.newRoomDescrip }}</p>
+
             </form>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="UIBootstrap.ok()">Create room</button>
-            <button class="btn btn-warning" type="button" ng-click="UIBootstrap.cancel()">Cancel</button>
+            <button class="btn btn-primary" ng-click="UIBootstrap.ok()">Create room</button>
+            <button class="btn btn-warning" ng-click="UIBootstrap.cancel()">Cancel</button>
+
         </div>
 </div>
