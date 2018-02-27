@@ -13,7 +13,7 @@
     // });
     //
     Room.add = function(newRoom) {
-      console.log("rooms:", rooms);
+      //console.log("rooms:", rooms);
       rooms.$add({$value: newRoom, $id: newRoom});
 
     }

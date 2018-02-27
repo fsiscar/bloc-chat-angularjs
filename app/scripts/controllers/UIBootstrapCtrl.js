@@ -16,7 +16,6 @@
     //this.newRoomDescrip = '';
 
     this.createRoom = function(Room) {
-      console.log("newRoomName:",this.newRoomName);
       $uibModalInstance.close(this.newRoomName);
     };
 
