@@ -20,7 +20,7 @@
             mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <div class="mdl-layout-spacer">Bloc-Chat Room {{ "RoonName" }}</div>
+      <div class="mdl-layout-spacer">Bloc-Chat Room {{ home.activeRoom }}</div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
         <label class="mdl-button mdl-js-button mdl-button--icon"
@@ -39,7 +39,7 @@
     <span class="mdl-layout-title">Bloc-Chat</span>
     <nav class="mdl-navigation" >
       <div ng-repeat="room in home.rooms">
-        <a class="mdl-navigation__link" href="">{{ room.$value }}</a>
+        <a class="mdl-navigation__link" href="" ng-click="home.selectRoom(room.$value, room.$id)">{{ room.$value }}</a>
       </div>
       <div>
         <button class="mdl-navigation__link" ng-click="home.openModal()">Add room</button>
@@ -50,6 +50,6 @@
 
 
   <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here --></div>
+    <div class="page-content" ng-repeat="message in home.messages">{{message.sentAt + " " + message.username + " - " + message.content }}</div>
   </main>
 </div>

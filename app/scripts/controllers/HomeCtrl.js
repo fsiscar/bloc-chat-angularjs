@@ -1,7 +1,9 @@
 (function() {
-  function HomeCtrl(Room, $uibModal) {
+  function HomeCtrl(Room, Message, $uibModal) {
     var home = {};
+    home.messages = [];
     home.rooms = Room.all;
+    home.activeRoom = 'Click menu to select a room.';
 
     // $ctrl.openComponentModal = function () {
     //     var modalInstance = $uibModal.open({
@@ -19,6 +21,13 @@
     //     }, function () {
     //       $log.info('modal-component dismissed at: ' + new Date());
     //     });
+    home.selectRoom = function($value, $id) {
+      //Sets activeRoom value and call function to filter messages for display
+      home.activeRoom = $value;
+      home.activeRoomId = $id;
+      home.messages = Message.getByRoomId(home.activeRoomId);
+      console.log('home.messages',home.messages);
+    }
 
     home.openModal = function(){
       var modalInstance = $uibModal.open({
@@ -38,5 +47,5 @@
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', '$uibModal', HomeCtrl]);
+    .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
 })();
