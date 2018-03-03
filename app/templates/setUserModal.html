@@ -1,0 +1,14 @@
+<div>
+  <div class="modal-header">
+      <h3 class="userName" id="userName">Set a username</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+      <form>
+        <label>This name will apper when you send messages</label>
+        <input type="text" ng-model="setUserModal.userName" ng-minlength="1" required>
+      </form>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-primary" ng-click="setUserModal.setUsername()">Set username</button>
+  </div>
+</div>
