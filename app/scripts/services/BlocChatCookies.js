@@ -1,10 +1,12 @@
 (function() {
   function BlocChatCookies($cookies, $uibModal) {
-    // use this for clearing cookie during test only: remove for production
-    $cookies.put('blocChatCurrentUser','');
+    // use next line for clearing cookie during test only: remove for production
+    // with it, user will be reset every time browser is reloaded
+    // Cookie name is 'blocChatCurrentUser'
+    //$cookies.put('blocChatCurrentUser','');
 
     var currentUser = $cookies.get('blocChatCurrentUser');
-    //console.log('currentUser', currentUser);
+
     if (!currentUser || currentUser === '') {
       var modalInstance = $uibModal.open({
         animation : 'true',

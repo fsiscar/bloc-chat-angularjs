@@ -1,21 +1,3 @@
-<!--
-<div class="headline">
-  <h2>Bloc Chat</h2>
-  <h4>Available rooms:</h4>
-</div>
-
-<div class="rooms-container" ng-repeat="room in home.rooms">
-  <a class="room-name">{{ room.$value }}</a>
-</div>
-
-<div class="add-room-button">
-  <button class="room-button" ng-click="home.openModal()">Add room</button>
-</div>
-
-
- The drawer is always open in large screens. The header is always shown,
-  even in small screens.
--->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
             mdl-layout--fixed-header">
   <header class="mdl-layout__header">
@@ -45,11 +27,20 @@
         <button class="mdl-navigation__link" ng-click="home.openModal()">Add room</button>
       </div>
     </nav>
-
   </div>
 
-
   <main class="mdl-layout__content">
-    <div class="page-content" ng-repeat="message in home.messages">{{message.sentAt + " " + message.username + " - " + message.content }}</div>
+    <div class="page-content" >
+      <div class="room messages" ng-repeat="message in home.messages">
+        {{message.sentAt + " - " + message.username + ": " + message.content }}
+      </div>
+      <div class="message imput box">
+        <form>
+          <label>Enter your message here</label>
+          <input type="text" ng-model="home.newMessage" ng-minlength="1" required>
+          <button class="send button" ng-click="home.sendMessage(newMessage)">Send</button>
+        </form>
+      </div>
+    </div>
   </main>
 </div>
